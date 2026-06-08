@@ -104,7 +104,7 @@ export default function Hero() {
               <a href="https://github.com/MonubiJustin" target="_blank" rel="noopener noreferrer" className="btn-outline">
                 <GithubIcon size={15} /> GitHub
               </a>
-              <a href="/resume.pdf" download className="btn-outline">
+              <a href="/MONUBI_JUSTIN_RESUME.pdf" download className="btn-outline">
                 <Download size={15} /> Resume
               </a>
             </motion.div>
