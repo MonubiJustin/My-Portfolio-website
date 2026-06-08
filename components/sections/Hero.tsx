@@ -196,7 +196,7 @@ export default function Hero() {
                   Backend Engineer
                 </p>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "0.3rem", justifyContent: "center" }}>
-                  {["Node.js", "Spring Boot", "Django", "APIs"].map((tech) => (
+                  {["Node.js", "Spring Boot", "REST", "APIs"].map((tech) => (
                     <span key={tech} className="badge" style={{ fontSize: "0.65rem" }}>{tech}</span>
                   ))}
                 </div>
