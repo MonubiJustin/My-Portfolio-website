@@ -45,11 +45,10 @@ export default function Hero() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr",
             gap: "3rem",
             alignItems: "center",
           }}
-          className="md:grid-cols-[1.2fr_0.8fr] lg:grid-cols-[1.3fr_0.7fr]"
+          className="grid-cols-1 md:grid-cols-[1.2fr_0.8fr] lg:grid-cols-[1.3fr_0.7fr]"
         >
           {/* ── Left: Text ── */}
           <motion.div variants={containerVariants} initial="hidden" animate="visible">
