@@ -191,34 +191,98 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
   margin: 0;
 }
 
-/* ─── Navbar ─────────────────────────────── */
-.nav-link {
-  font-family: var(--font-sans);
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--color-espresso-600);
-  text-decoration: none;
-  transition: color 0.2s ease;
-  position: relative;
-}
-
-.nav-link::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
+/* ─── Floating Navbar ────────────────────── */
+.floating-nav-shell {
+  position: fixed;
+  right: 0;
+  bottom: 1.5rem;
   left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--color-espresso-800);
-  transition: width 0.25s ease;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+  pointer-events: none;
 }
 
-.nav-link:hover {
+.floating-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.45rem;
+  background: rgba(44, 26, 14, 0.94);
+  border: 1px solid rgba(240, 228, 219, 0.16);
+  border-radius: 999px;
+  box-shadow: 0 12px 32px rgba(44, 26, 14, 0.24);
+  backdrop-filter: blur(14px);
+  pointer-events: auto;
+}
+
+.floating-nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.7rem;
+  color: var(--color-cream-300);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.floating-nav-link:hover {
+  color: var(--color-cream-50);
+  background: rgba(240, 228, 219, 0.12);
+  transform: translateY(-2px);
+}
+
+.floating-nav-link.is-active {
   color: var(--color-espresso-900);
+  background: var(--color-espresso-200);
+  box-shadow: 0 4px 14px rgba(222, 200, 186, 0.3);
 }
 
-.nav-link:hover::after {
-  width: 100%;
+.floating-nav-label {
+  display: none;
+  margin-left: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+@media (min-width: 768px) {
+  .floating-nav {
+    gap: 0.35rem;
+    padding: 0.5rem;
+  }
+
+  .floating-nav-link {
+    min-width: auto;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .floating-nav-label {
+    display: inline;
+  }
+}
+
+@media (max-width: 420px) {
+  .floating-nav-shell {
+    bottom: 1rem;
+    padding: 0 0.75rem;
+  }
+
+  .floating-nav {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .floating-nav-link {
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    padding: 0.45rem;
+  }
 }
 
 /* ─── Skill Row ──────────────────────────── */
