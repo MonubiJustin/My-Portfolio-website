@@ -18,6 +18,7 @@ const statusColors: Record<string, { bg: string; text: string }> = {
 export default function CurrentlyLearning() {
   return (
     <section
+      id="skills"
       className="section"
       style={{ backgroundColor: "var(--color-cream-200)" }}
     >
@@ -39,7 +40,7 @@ export default function CurrentlyLearning() {
               margin: "0 auto",
             }}
           >
-            {learningItems.map((item, i) => {
+            {learningItems.map((item) => {
               const Icon = iconMap[item.icon] ?? Layers;
               const colors = statusColors[item.status] ?? { bg: "#F5F5F5", text: "#555" };
               return (
